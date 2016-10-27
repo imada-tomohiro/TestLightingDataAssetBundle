@@ -5,13 +5,13 @@ using System.Collections;
 public class Test : MonoBehaviour {
   private Object[] publicObjects;
   
-  public void OnClickAssetBundleLoad()
+  public void OnClickAssetBundleLoad(bool isAdditive)
   {
-    StartCoroutine(LoadAssetBundle());
+    StartCoroutine(LoadAssetBundle(isAdditive));
   }
 
 
-  IEnumerator LoadAssetBundle()
+  IEnumerator LoadAssetBundle(bool isAdditive)
   {
     
     Debug.Log("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/light");
@@ -42,6 +42,10 @@ public class Test : MonoBehaviour {
     AssetBundle scenebundle = scenewww.assetBundle;
 
     Debug.Log("LoadScene");
-    SceneManager.LoadSceneAsync("LightingScene");
+    if(isAdditive){
+      SceneManager.LoadSceneAsync("LightingScene", LoadSceneMode.Additive);
+    }else{
+      SceneManager.LoadSceneAsync("LightingScene");
+    }
   }
 }
