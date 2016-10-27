@@ -14,9 +14,9 @@ public class Test : MonoBehaviour {
   IEnumerator LoadAssetBundle()
   {
     
-    Debug.Log("file://" + Application.streamingAssetsPath + "/test");
+    Debug.Log("file://" + Application.streamingAssetsPath + "/Android/test/light");
     
-    WWW lightwww = new WWW("file://" + Application.streamingAssetsPath + "/test");
+    WWW lightwww = new WWW("file://" + Application.streamingAssetsPath + "/Android/test/light");
     
     yield return lightwww;
     
@@ -33,15 +33,15 @@ public class Test : MonoBehaviour {
     publicObjects = objects;
     Debug.Log("Light");
 
-    Debug.Log("file://" + Application.streamingAssetsPath + "/test/scene");
+    Debug.Log("file://" + Application.streamingAssetsPath + "/Android/test/scene");
 
-    WWW scenewww = new WWW(Application.streamingAssetsPath +  "/test/scene");
+    WWW scenewww = new WWW(Application.streamingAssetsPath +  "/Android/test/scene");
 
     yield return scenewww;
 
     AssetBundle scenebundle = scenewww.assetBundle;
 
     Debug.Log("LoadScene");
-    SceneManager.LoadSceneAsync("LightingScene");
+    SceneManager.LoadSceneAsync("LightingScene", LoadSceneMode.Additive);
   }
 }
