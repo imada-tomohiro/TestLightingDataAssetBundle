@@ -5,9 +5,13 @@ using System.Collections;
 public class Test : MonoBehaviour {
   private Object[] publicObjects;
   
-  public void OnClickAssetBundleLoad()
+  public void OnClickAssetBundleLoad(bool isAdditive)
   {
     Debug.Log("LoadScene");
-    SceneManager.LoadSceneAsync("LightingScene", LoadSceneMode.Additive);
+    if(isAdditive){
+      SceneManager.LoadSceneAsync("LightingScene", LoadSceneMode.Additive);
+    }else{
+      SceneManager.LoadSceneAsync("LightingScene");
+    }
   }
 }
