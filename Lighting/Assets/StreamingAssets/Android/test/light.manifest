@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 192357890
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 702ef0837c986e148d91c1c874278a06
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8b54d5bd9421015746ebf7860fd82ded
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scenes/LightingScene/ReflectionProbe-0.exr
+- Assets/Scenes/LightingScene/LightingData.asset
+Dependencies: []
