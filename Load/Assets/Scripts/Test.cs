@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Test : MonoBehaviour {
   private Object[] publicObjects;
@@ -14,7 +15,7 @@ public class Test : MonoBehaviour {
   IEnumerator LoadAssetBundle(bool isAdditive)
   {
     
-    Debug.Log("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/light");
+    /*    Debug.Log("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/light");
     
     WWW lightwww = new WWW("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/light");
     
@@ -24,14 +25,30 @@ public class Test : MonoBehaviour {
     
     Object[] objects = bundle.LoadAllAssets();
     
-    foreach (Object obj in objects)
+
+    objs.AddRange(objects);*/
+    List<Object> objs = new List<Object>();
+    
+    Debug.Log("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/skybox");
+    
+    WWW skyboxwww = new WWW("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/skybox");
+    
+    yield return skyboxwww;
+    
+    AssetBundle skyboxbundle = skyboxwww.assetBundle;
+    
+    Object[] skyboxes = skyboxbundle.LoadAllAssets();
+    
+    objs.AddRange(skyboxes);
+    publicObjects = objs.ToArray();
+
+    Debug.Log(skyboxes.Length);
+    foreach (Object obj in publicObjects)
     {
       Debug.Log("obj=" + obj.name);
       Debug.Log("objtype=" + obj.GetType().ToString());
     }
 
-    publicObjects = objects;
-    Debug.Log("Light");
 
     Debug.Log("file://" + Application.streamingAssetsPath.Replace("/Load/", "/Lighting/") + "/Android/test/scene");
 
@@ -43,9 +60,15 @@ public class Test : MonoBehaviour {
 
     Debug.Log("LoadScene");
     if(isAdditive){
-      SceneManager.LoadSceneAsync("LightingScene", LoadSceneMode.Additive);
+      yield return SceneManager.LoadSceneAsync("LightingScene", LoadSceneMode.Additive);
+
     }else{
       SceneManager.LoadSceneAsync("LightingScene");
     }
   }
+
+  public void hoge(){
+    SceneManager.SetActiveScene (SceneManager.GetSceneByName ("LightingScene"));
+  }
 }
+

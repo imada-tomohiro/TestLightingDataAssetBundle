@@ -1,19 +1,17 @@
 ManifestFileVersion: 0
-CRC: 1655815389
+CRC: 3068530256
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: daae59df45d0328f07e5199361f8cf8b
+    Hash: 94a67345e6c42d79adcc6f0f59ec09e6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2e07dc384a8209072f0005ee0c41b216
+    Hash: a8d5bae5a3b36f8433bb4087112f1afe
 HashAppended: 0
 ClassTypes:
 - Class: 1
   Script: {instanceID: 0}
 - Class: 4
-  Script: {instanceID: 0}
-- Class: 20
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -31,17 +29,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 65
   Script: {instanceID: 0}
-- Class: 81
-  Script: {instanceID: 0}
 - Class: 89
-  Script: {instanceID: 0}
-- Class: 92
   Script: {instanceID: 0}
 - Class: 104
   Script: {instanceID: 0}
 - Class: 108
-  Script: {instanceID: 0}
-- Class: 124
   Script: {instanceID: 0}
 - Class: 135
   Script: {instanceID: 0}
@@ -52,4 +44,5 @@ ClassTypes:
 Assets:
 - Assets/Scenes/LightingScene.unity
 Dependencies:
-- /Users/imada.tomohiro/Desktop/TestLightingAssetBundle/Assets/StreamingAssets/Android/test/light
+- /Users/imada.tomohiro/Desktop/TestLightingAssetBundle/Lighting/Assets/StreamingAssets/Android/test/light
+- /Users/imada.tomohiro/Desktop/TestLightingAssetBundle/Lighting/Assets/StreamingAssets/Android/test/skybox

@@ -14,4 +14,8 @@ public class Test : MonoBehaviour {
       SceneManager.LoadSceneAsync("LightingScene");
     }
   }
+
+  public void hoge(){
+    SceneManager.SetActiveScene (SceneManager.GetSceneByName ("LightingScene"));
+  }
 }

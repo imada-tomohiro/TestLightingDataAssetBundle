@@ -1,11 +1,15 @@
 ManifestFileVersion: 0
-CRC: 944451829
+CRC: 1511029840
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: test/scene
       Dependencies:
         Dependency_0: test/light
+        Dependency_1: test/skybox
     Info_1:
       Name: test/light
+      Dependencies: {}
+    Info_2:
+      Name: test/skybox
       Dependencies: {}
